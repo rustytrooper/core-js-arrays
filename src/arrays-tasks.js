@@ -213,9 +213,9 @@ function insertItem(arr, item, index) {
   // throw new Error('Not implemented');
   const head = arr.slice(0, index);
   const tail = arr.slice(index, arr.length);
-  head.unshift(item);
-  head.concat(tail);
-  return head;
+  head[index] = item;
+  const output = head.concat(tail);
+  return output;
 }
 
 /**
@@ -483,8 +483,22 @@ function getFalsyValuesCount(arr) {
  *                              [0,0,0,1,0],
  *                              [0,0,0,0,1]]
  */
-function getIdentityMatrix(/* n */) {
-  throw new Error('Not implemented');
+function getIdentityMatrix(n) {
+  // throw new Error('Not implemented');
+  const matrix = [...Array(n).fill(0)].map(() => {
+    return [...Array(n).fill(0)];
+  });
+  const output = matrix.map((el1, i) => {
+    const row = el1.map((el2, j) => {
+      if (i === j) {
+        // el1[j] = 1;
+        return 1;
+      }
+      return 0;
+    });
+    return row;
+  });
+  return output;
 }
 
 /**
@@ -734,8 +748,23 @@ function sortDigitNamesByNumericOrder(/* arr */) {
  *   swapHeadAndTail([]) => []
  *
  */
-function swapHeadAndTail(/* arr */) {
-  throw new Error('Not implemented');
+function swapHeadAndTail(arr) {
+  // throw new Error('Not implemented');
+  const half = Math.floor(arr.length / 2);
+  const output = [];
+  if (arr.length % 2 !== 0) {
+    const firstHalf = arr.slice(0, half);
+    const secondHalf = arr.slice(half + 1);
+    output.push(secondHalf);
+    output.push(arr[half]);
+    output.push(firstHalf);
+  } else {
+    const firstHalf = arr.slice(0, half);
+    const secondHalf = arr.slice(half);
+    output.push(secondHalf);
+    output.push(firstHalf);
+  }
+  return output.flat();
 }
 
 module.exports = {
