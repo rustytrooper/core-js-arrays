@@ -650,21 +650,20 @@ function shiftArray(/* arr, n */) {
  *   sortDigitNamesByNumericOrder([ 'nine','eight','nine','eight' ]) => [ 'eight','eight','nine','nine']
  *   sortDigitNamesByNumericOrder([ 'one','one','one','zero' ]) => [ 'zero','one','one','one' ]
  */
-function sortDigitNamesByNumericOrder(arr) {
+function sortDigitNamesByNumericOrder(/* arr */) {
   // throw new Error('Not implemented');
-  const nums = [
-    'zero',
-    'one',
-    'two',
-    'three',
-    'four',
-    'five',
-    'six',
-    'seven',
-    'eight',
-    'nine',
-  ];
-
+  // const nums = [
+  //   'zero',
+  //   'one',
+  //   'two',
+  //   'three',
+  //   'four',
+  //   'five',
+  //   'six',
+  //   'seven',
+  //   'eight',
+  //   'nine',
+  // ];
   // const output = [];
   // arr.map((el1, i) => {
   //   nums.map((el2, j) => {
@@ -679,19 +678,19 @@ function sortDigitNamesByNumericOrder(arr) {
   //   return output;
   // });
   // return output;
-  const objNum = {
-    0: 'zero',
-    1: 'one',
-    2: 'two',
-    3: 'three',
-    4: 'four',
-    5: 'five',
-    6: 'six',
-    7: 'seven',
-    8: 'eight',
-    9: 'nine',
-  }
-  let output;
+  // const objNum = {
+  //   0: 'zero',
+  //   1: 'one',
+  //   2: 'two',
+  //   3: 'three',
+  //   4: 'four',
+  //   5: 'five',
+  //   6: 'six',
+  //   7: 'seven',
+  //   8: 'eight',
+  //   9: 'nine',
+  // };
+  // let output;
   // Object.entries(objNum).map((el1, i) => {
   //   // console.log(el);
   //   arr.map((el2, j) => {
@@ -701,19 +700,19 @@ function sortDigitNamesByNumericOrder(arr) {
   //     }
   //   })
   // })
-  Object.entries(objNum).map((el1, i) => {
-    arr.map((el2, j) => {
-      if (el1[1] === el2) {
-        console.log(el1[0], el2)
-        output = arr.sort((a, b) => {
-          console.log(a, b, '101');
-          console.log(arr[i], '102')
-        }
-        )
-      }
-    })
-  })
-  console.log(output);
+  //   Object.entries(objNum).map((el1, i) => {
+  //     arr.map((el2) => {
+  //       if (el1[1] === el2) {
+  //         console.log(el1[0], el2)
+  //         output = arr.sort((a, b) => {
+  //           console.log(a, b, '101');
+  //           console.log(arr[i], '102')
+  //         }
+  //         )
+  //       }
+  //     })
+  //   })
+  //   console.log(output);
 }
 
 /**
